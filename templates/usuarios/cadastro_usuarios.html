@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="pagina-cadastro" data-aos="fade-right" data-aos-duration="800">
+    <section class="cadastro">
+        <div class="formulario">
+            <h2>Cadastro De Usuários</h2>
+            <form method="post" enctype="multipart/from-data" class="cadastUsers">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="botao-cadastro">Finalizar Cadastro</button>
+            </form>
+        </div>
+        <div class="imagem">
+            <img src="{% static 'img/cadastro-usuario.png' %}" alt="Imagem de Cadastro de Usuários">
+        </div>
+    </section>
+</div>
+
+{% endblock %}

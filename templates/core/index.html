@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div id="baseMain">
+    <div id="loading"></div>
+    <div id="titulo">
+        <h1>
+            {% for letra in "CONECTANDO O MUNDO" %}
+            <span class="letra">{{ letra }}</span>
+            {% endfor %}
+        </h1>
+        <img id="pin-do-base" src="/static/img/pin.png">
+    </div>
+    <h3>Explorando <span class="negrito">CULTURAS</span>, conectando <span class="negrito">NAÇÕES</span>.</h3>
+
+    <!-- Bandeiras -->
+    <div id="paises">
+        <div class="flag-container" style="--delay: 0.1s">
+            <a href="http://10.90.238.10:8000">
+                <img id="brasil" class="flag" src="/static/img/brasil.png">
+            </a>
+        </div>
+        <div class="flag-container" style="--delay: 0.2s">
+            <a href="http://10.90.238.8:8000">
+                <img id="eua" class="flag" src="/static/img/eua.png">
+            </a>
+        </div>
+        <div class="flag-container" style="--delay: 0.3s">
+            <a href="http://10.90.238.38:8000">
+                <img id="japao" class="flag" src="/static/img/japao.png">
+            </a>
+        </div>
+        <div class="flag-container" style="--delay: 0.4s">
+            <a href="http://10.90.238.30:8000">
+                <img id="franca" class="flag" src="/static/img/franca.png">
+            </a>
+        </div>
+        <div class="flag-container" style="--delay: 0.5s">
+            <a href="http://10.90.238.48:8000">
+                <img id="alemanha" class="flag" src="/static/img/alemanha.png">
+            </a>
+        </div>
+        <div class="flag-container" style="--delay: 0.6s">
+            <a href="http://10.90.238.13:8000">
+                <img id="india" class="flag" src="/static/img/india.png">
+            </a>
+        </div>
+        <div class="flag-container" style="--delay: 0.7s">
+            <a href="http://10.90.238.98:8000">
+                <img id="australia" class="flag" src="/static/img/australia.png">
+            </a>
+        </div>
+        <div class="flag-container" style="--delay: 0.8s">
+            <a href="http://10.90.238.2:8000">
+                <img id="africa" class="flag" src="/static/img/africa.png">
+            </a>
+        </div>
+    </div>
+
+    <div id="introducao">
+        <h6>
+            Esse site foi desenvolvido com o objetivo de <span class="negrito1">conectar diversas culturas e países em
+                um único lugar</span>, trazendo informações, curiosidades e experiências únicas que aproximam pessoas do
+            mundo inteiro. Aqui você poderá <span class="negrito1">explorar tradições, histórias, gastronomia e pontos
+                turísticos</span>, criando uma verdadeira <span class="negrito1">ponte entre nações e promovendo o
+                respeito à diversidade cultural.</span>
+        </h6>
+    </div>
+</div>
+{% endblock %}

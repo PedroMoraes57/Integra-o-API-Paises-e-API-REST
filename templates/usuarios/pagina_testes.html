@@ -1,0 +1,22 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block title%}Página de Testes{% endblock %}
+{% block content %}
+    <div id="corzinha">
+        <div id="test">
+            <br>
+            <h1>Página de Testes<h1>
+            <form method="post">
+                {% csrf_token %}
+                <button type="submit">Executar Testes</button>
+            </form>
+            {% if string_testes %}
+                <h3 style="margin-bottom: 20px; color: var(--branco); font-size: 30px;">Status dos Testes</h3>
+                <div class="quadradoteste">
+                    <pre id="string-testes" >{{ string_testes }}</pre>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+    
+{% endblock%}

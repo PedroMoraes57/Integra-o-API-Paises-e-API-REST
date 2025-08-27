@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Conectando o Mundo</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <link rel="icon" href="{% static 'img/favicon.png' %}" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+        rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Paytone+One&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="header-left">
+            <img src="{% static 'img/globo.png' %}" alt="Globo Base">
+        </div>
+
+        <nav class="header-center">
+            <ul>
+                <li><a href="{% url 'index' %}">Home</a></li>
+                <li><a href="{% url 'cadastro_usuarios' %}">Cadastro Usuario</a></li>
+                <li><a href="{% url 'listar_usuarios' %}">Lista de Usuários</a></li>
+                <li><a href="{% url 'parceiros' %}">Parceiros</a></li>
+                <li><a href="{% url 'busca_pais' %}">País</a></li>
+                <li><a href="{% url 'teste_usuarios' %}">Testes</a></li>
+            </ul>
+        </nav>
+
+        <div class="header-right">
+            <a style="text-decoration:none" href="{% url 'personalidades_historicas' %}">
+                <button class="cssbuttons-io-button">
+                    EXTRA
+                    <div class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" width="24"
+                            height="24">
+                            <path fill-rule="evenodd"
+                                d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                </button>
+            </a>
+
+            <button id="theme-toggle">
+                <img id="theme-icon" src="{% static 'img/icon-sun.png' %}" alt="Ícone Tema">
+            </button>
+        </div>
+    </header>
+
+    <!-- FAIXA DO PAÍS -->
+    <nav class="faixa">
+        <div id="cor1"></div>
+        <div id="cor2"></div>
+        <div id="cor3"></div>
+    </nav>
+
+    <!-- CONTEÚDO -->
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <!-- RODAPÉ -->
+<footer>
+    <p>&copy; Todos Direitos Reservados a <span id="tde">TDE 2B-24</span></p>
+    <img src="{% static 'img/pin_base.png' %}" alt="PIN" style="width: 30px; height: auto;">
+</footer>
+
+    <!-- SCRIPT -->
+    <script>
+        // HEADER ESCONDER AO SCROLL
+        let lastScrollY = window.scrollY;
+        const header = document.querySelector("header");
+        const faixa = document.querySelector(".faixa");
+
+        window.addEventListener("scroll", () => {
+            const currentScrollY = window.scrollY;
+
+            if (currentScrollY > lastScrollY && currentScrollY > 50) {
+                header.classList.add("header-hidden");
+                faixa.classList.add("faixa-hidden");
+            } else {
+                header.classList.remove("header-hidden");
+                faixa.classList.remove("faixa-hidden");
+            }
+
+            lastScrollY = currentScrollY;
+        });
+
+        // Loading
+        window.addEventListener("load", () => {
+            document.getElementById("loading").style.display = "none";
+        });
+
+  // Alternar tema claro/escuro com persistência
+  document.addEventListener('DOMContentLoaded', () => {
+    const themeIcon = document.getElementById('theme-icon');
+    const saved = localStorage.getItem('theme') || 'dark';
+    if (saved === 'light') {
+      document.body.classList.add('light-mode');
+      themeIcon.src = "{% static 'img/icon-moon.png' %}";
+    } else {
+      themeIcon.src = "{% static 'img/icon-sun.png' %}";
+    }
+  });
+
+  const toggleButton = document.getElementById('theme-toggle');
+  const themeIcon = document.getElementById('theme-icon');
+
+  toggleButton.addEventListener('click', () => {
+    const isLight = document.body.classList.toggle('light-mode');
+    localStorage.setItem('theme', isLight ? 'light' : 'dark');
+    themeIcon.src = isLight
+      ? "{% static 'img/icon-moon.png' %}"
+      : "{% static 'img/icon-sun.png' %}";
+  });
+    </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            AOS.init({
+                duration: 1000,
+                once: true,
+            });
+        });
+    </script>
+</body>
+
+</html>

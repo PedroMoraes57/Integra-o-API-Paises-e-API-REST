@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<section class="bannerpersonalidades">
+    <div class="textopersonalidades" data-aos="fade-up">
+      <h1>PERSONALIDADES HISTÓRICAS</h1>
+      <h3>Conheça as principais personalidades da França</h3>
+    </div>
+</section>
+<br>
+    <div class="personalidades" data-aos="fade-up">
+        <div class="personalidade">
+            <h1>Napoleão Bonaparte</h1>
+            <p>Napoleão Bonaparte foi um estadista e líder militar francês que ganhou destaque durante a Revolução Francesa e liderou várias 
+                campanhas militares de sucesso durante as Guerras Revolucionárias Francesas. Foi Imperador dos Franceses como Napoleão I de 1804 
+                a 1814 e brevemente em 1815 durante os Cem Dias.</p> <br><br>
+            <p> ★ 15 de agosto de 1769    ✟ 5 de maio de 1821</p><br><br><br><br>
+            <a id="botaoper" href="https://www.todamateria.com.br/napoleao-bonaparte/">Saiba Mais</a>
+        </div>
+        <div class="img-personalidade">
+            <img class="imagemper" src="{% static 'img/napoleao.png' %}" alt="Imagem de Napoleão">
+        </div>
+    </div>
+
+    <div class="personalidades" data-aos="fade-up">
+        <div class="img-personalidade">
+            <img class="imagemper" src="{% static 'img/joana.png' %}" alt="Imagem de Joana">
+        </div>
+        <div class="personalidade">
+            <h1>Joana d'Arc</h1>
+            <p>Joana d’Arc foi uma camponesa e santa francesa canonizada pela Igreja Católica, considerada uma heroína da França 
+                pelos seus feitos durante a Guerra dos Cem Anos. Nasceu filha de Jacques d’Arc e Isabelle Romée, numa família camponesa, 
+                em Domrémy no nordeste da França.</p> <br><br>
+            <p> ★ Desconhecido  ✟ 30 de maio de 1431</p><br><br><br><br><br><br><br>
+            <a id="botaoper" href="https://www.todamateria.com.br/joana-d-arc/">Saiba Mais</a>
+        </div>
+    </div>
+
+    <div class="personalidades" data-aos="fade-up">
+        <div class="personalidade">
+            <h1>René Descartes</h1>
+            <p>René Descartes (La Haye en Touraine, 31 de março de 1596 – Estocolmo, 11 de fevereiro de 1650) foi um filósofo, físico e 
+                matemático francês. Durante a Idade Moderna, também era conhecido por seu nome latino Renatus Cartesius. Notabilizou-se 
+                sobretudo por seu trabalho revolucionário na filosofia e na ciência, mas também obteve reconhecimento matemático por sugerir a 
+                fusão da álgebra com a geometria.</p> <br><br>
+            <p> ★ 31 de março de 1596  ✟ 11 de fevereiro de 1650 </p><br><br><br><br>
+            <a id="botaoper" href="https://www.todamateria.com.br/descartes/">Saiba Mais</a>
+        </div>
+        <div class="img-personalidade">
+            <img class="imagemper" src="{% static 'img/rene.png' %}" alt="Imagem de René">
+        </div>
+    </div>
+
+    <div class="personalidades" data-aos="fade-up">
+        <div class="img-personalidade">
+            <img class="imagemper" src="{% static 'img/zidane.png' %}" alt="Imagem de Zinedine">
+        </div>
+        <div class="personalidade">
+            <h1>Zinédine Zidane</h1>
+            <p>Zinédine Yazid Zidane é um treinador e ex-futebolista francês de origem argelina que atuava como meio-campista. Atualmente está 
+                sem clube. Como jogador, foi um camisa 10 clássico e é amplamente considerado um dos maiores futebolistas da história.</p> <br><br>
+            <p> ★  23 de junho de 1972 (idade 53 anos) </p><br><br><br><br><br><br><br>
+            <a id="botaoper" href="https://www.realmadrid.com/pt-PT/o-clube/historia/lendas-futebol/zinedine-zidane">Saiba Mais</a>
+        </div>
+    </div>
+    <br><br><br>
+
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            AOS.init();
+        });
+    </script>
+{% endblock %}

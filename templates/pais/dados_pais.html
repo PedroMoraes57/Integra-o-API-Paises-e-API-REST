@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="main">
+  <section class="banner">
+    <div class="texto-franca"data-aos="fade-up">
+      <p>CONHEÇA A</p>
+      <h1>FRANÇA 🇫🇷</h1>
+    </div>
+  </section>
+  <section class="dados-pais"data-aos="fade-right" data-aos-duration="1000">
+    <div class="nomefranca">
+      <h2>Nome Oficial:</h2>
+      <hr class="linha-pais">
+      {% if dados %}
+      <h3>{{ dados.name.official }}</h3>
+      <h2 class="bandeira-pais-texto">Bandeira do País:</h2>
+      <hr class="linha-pais2">
+      <img src="{{ dados.flags.png }}" alt="{{ dados.flags.alt }}">
+    </div>
+    <div class="outrosdados" data-aos="fade-right"  data-aos-duration="1500">
+      <h2>Outros Dados:</h2>
+      <hr class="linha-pais">
+      <h3>População Total:</h3>
+      <p class="info">{{ dados.population }}</p>
+      <h3>Capital:</h3>
+      <p class="info">{{ pais.capital }}</p>
+      <h3>Moeda:</h3>
+      <p class="info">{{ dados.currencies.EUR.name }} {{ dados.currencies.EUR.symbol }}</p>
+      <h3>Lingua Nativa:</h3>
+      <p class="info">{{ dados.languages.fra }}</p>
+      <h3>Continente:</h3>
+      <p class="info">{{ dados.region }}</p>
+    </div>
+    {% endif %}
+  </section>
+  <section class="sobrefranca" data-aos="fade-down"   data-aos-duration="1000">
+    <div class="sobrenos">
+      <h2>Sobre o país</h2>
+      <hr class="linha-pais">
+      <p>A França, localizada na Europa Ocidental, é um dos destinos mais icônicos e visitados do mundo. Com uma rica
+        história, o país é conhecido por suas cidades medievais encantadoras, aldeias alpinas pitorescas e praias
+        deslumbrantes ao longo do Mar Mediterrâneo. Paris, sua capital, é um centro global de arte, moda, gastronomia e
+        cultura, famosa por monumentos emblemáticos como a Torre Eiffel, a Catedral de Notre-Dame e o Museu do Louvre,
+        que abriga obras-primas como a Mona Lisa.</p>
+    </div>
+    <div class="cores">
+      <h2>Cores da Bandeira:</h2>
+      <hr class="linha-pais">
+      <img src="{% static 'img/cores.png' %}" alt="">
+    </div>
+    <div class="brasaopais">
+      <h2>Brasão do País:</h2>
+      <hr class="linha-pais">
+      {% if dados %}
+      <img src="{{ dados.coatOfArms.png }}">
+      {% endif %}
+    </div>
+  </section>
+  <section class="curiosidades" data-aos="fade-up"  data-aos-duration="1000">
+    <h2>Curiosidades</h2>
+    <hr class="linha-curiosdades">
+    <div class="container-curiosidades">
+      <div class="containercuriosidade" id="primeiro">
+        <div class="overlay">
+          <h3><span class="spancuriosidades">Torre Eiffel</span></h3>
+          <p>A Torre Eiffel, localizada em Paris, é um dos monumentos mais icônicos do mundo. Foi construída para a Exposição Universal de 1889 e originalmente recebeu críticas mistas, porém hoje em dia é a atração mais visitada da França.
+            </p>
+          <button onclick="window.open('https://pt.wikipedia.org/wiki/Torre_Eiffel', '_blank')">Saiba Mais</button>
+        </div>
+      </div>
+      <div class="containercuriosidade 2" id="segunda">
+        <div class="overlay">
+          <h3><span class="spancuriosidades">Cadeados do Amor</span></h3>
+          <p>Prender "cadeados do amor" em pontes, especialmente na Pont des Arts em Paris, simbolizando o compromisso romântico entre casais</p>
+          <button onclick="window.open('https://pt.wikipedia.org/wiki/Cadeados_do_amor', '_blank')">Saiba Mais</button>
+        </div>
+      </div>
+      <div class="containercuriosidade 3" id="terceira">
+        <div class="overlay">
+          <h3><span class="spancuriosidades">Alto consumo de vinho</span></h3>
+          <p>De todos os países do mundo, a França consome a segunda maior quantidade de vinho. No total, os franceses consomem cerca de 25 milhões de hectolitros por ano. Eles ficam atrás dos Estados Unidos, que consome cerca de 30 milhões de hectolitros.</p>
+          <button onclick="window.open('https://revistaadega.uol.com.br/artigo/qual-e-o-pais-que-mais-consome-vinho.html', '_blank')">Saiba Mais</button>
+        </div>
+      </div>
+      <div class="containercuriosidade 4" id="quarta">
+        <div class="overlay">
+          <h3><span class="spancuriosidades">Cinema Francês</span></h3>
+          <p>Um dos mais dinâmicos e influentes do mundo, conhecido por sua ousadia artística, profundidade emocional e valorização de temas complexos e relações humanas</p>
+          <button onclick="window.open('https://pt.wikipedia.org/wiki/Cinema_da_Fran%C3%A7a', '_blank')">Saiba Mais</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+{% endblock %}
