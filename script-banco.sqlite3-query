@@ -1,0 +1,18 @@
+-- database: ./db.sqlite3
+
+INSERT INTO usuarios_usuario (nome, email, cep, rua, estado, telefone) VALUES
+('Higor', 'higor@gmail.com', '01001-000', 'Rua das Flores, 123', 'SP', '(11) 98888-1111'),
+('Eike', 'eike@gmail.com', '20010-100', 'Av. Brasil, 456', 'RJ', '(21) 97777-2222'),
+('Moraes', 'moraes@gmail.com', '70040-010', 'Rua do Comércio, 789', 'DF', '(61) 96666-3333'),
+('Leonardo Jordao', 'leonardo.jordao@gmail.com', '40010-200', 'Rua das Palmeiras, 101', 'BA', '(71) 95555-4444'),
+('Leozin Not', 'leozin.not@gmail.com', '60010-300', 'Av. Santos Dumont, 202', 'CE', '(85) 94444-5555'),
+('Meneghetti', 'meneghetti@gmail.com', '69010-400', 'Rua Amazonas, 303', 'AM', '(92) 93333-6666'),
+('Luis Gustavo', 'luis.gustavo@gmail.com', '58010-500', 'Rua do Sol, 404', 'PB', '(83) 92222-7777'),
+('Matheus Costa', 'matheus.costa@gmail.com', '80010-600', 'Rua Paraná, 505', 'PR', '(41) 91111-8888'),
+('Pavão', 'pavao@gmail.com', '88010-700', 'Rua das Nações, 606', 'SC', '(48) 99999-9999'),
+('Arthur Mambelli', 'arthur.mambelli@gmail.com', '57010-800', 'Rua Sergipe, 707', 'SE', '(79) 97777-0000'),
+('Isac', 'isac@gmail.com', '50010-900', 'Rua Recife, 808', 'PE', '(81) 98888-1234'),
+('Isadora', 'isadora@gmail.com', '79010-010', 'Rua Mato Grosso do Sul, 909', 'MS', '(67) 97777-5678'),
+('Gabriel ', 'gabriel.ramos@gmail.com', '36010-020', 'Rua Minas Gerais, 110', 'MG', '(31) 96666-8765'),
+('Julia Fiel', 'carolina.pinto@gmail.com', '69020-030', 'Rua Roraima, 120', 'RR', '(95) 95555-4321'),
+('Fiori', 'eduardo.santana@gmail.com', '77010-040', 'Rua Tocantins, 130', 'TO', '(63) 94444-2468');
